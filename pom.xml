@@ -64,6 +64,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalname>healthcarev1_0</finalname>
 	</build>
 
 </project>
