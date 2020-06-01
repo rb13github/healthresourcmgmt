@@ -1,4 +1,4 @@
 FROM openjdk:latest
-ADD Healthcarev1_0.jar Healthcarev1_0.jar
+ADD target/healthcarev1_0.jar healthcarev1_0.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","Healthcarev1_0.jar"]
+ENTRYPOINT ["java","-jar","healthcarev1_0.jar"]

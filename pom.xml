@@ -62,9 +62,21 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+				
+				<!--  RB: Added to mention the Main class name > -->
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>com.healthcare.v_1_0.Application</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+      
 			</plugin>
 		</plugins>
-		<finalname>healthcarev1_0</finalname>
+		<finalName>healthcarev1_0</finalName>
 	</build>
 
 </project>
