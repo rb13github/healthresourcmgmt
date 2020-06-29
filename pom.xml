@@ -5,13 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.0.RELEASE</version>
+		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.healthcare.v1.0</groupId>
-	<artifactId>Healthcarev1.0</artifactId>
+	<groupId>com.healthmgmt.app</groupId>
+	<artifactId>Healthmgmt-services</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Healthcarev1.0</name>
+	<packaging>war</packaging>
+	<name>Healthmanagment-services</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -19,21 +20,55 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-		<dependency>
+	<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jasper</artifactId>
+    <scope>provided</scope>
+</dependency>
+
+	<!-- RB- commented for temporary to run jsp only  -->
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		-->
+		<!-- RB- commented for temporary to run jsp only  -->
+		
+		<!-- 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		-->
+		<!-- RB- commented for temporary to run jsp only  -->
+		
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		-->
+<!-- RB- commented for temporary to run jsp only  -->
+		<!-- <dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<!--  RB: commented & removed the classes <dependency>
+		-->
+		
+		<!-- RB- commented for not using unit test cases -->
+		<!--  
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -44,17 +79,13 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		-->
-		<!-- added by RB https://dzone.com/articles/bounty-spring-boot-and-postgresql-database -->
+		
 		<dependency>
-
-<groupId>org.springframework.boot</groupId>
-
-<artifactId>spring-boot-starter-jdbc</artifactId>
-
-</dependency>
-
-
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		-->
 	</dependencies>
 
 	<build>
@@ -62,21 +93,8 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-				
-				<!--  RB: Added to mention the Main class name > -->
-        <archive>
-          <manifest>
-            <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>com.healthcare.v_1_0.Application</mainClass>
-          </manifest>
-        </archive>
-      </configuration>
-      
 			</plugin>
 		</plugins>
-		<finalName>healthcarev1_0</finalName>
 	</build>
 
 </project>
